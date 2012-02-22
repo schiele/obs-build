@@ -283,8 +283,10 @@ sub read_config {
     } elsif ($l0 eq 'changetarget:' || $l0 eq 'target:') {
       $config->{'target'} = join(' ', @l);
       push @macros, "%define _target_cpu ".(split('-', $config->{'target'}))[0] if $config->{'target'};
+    } elsif ($l0 eq 'hostarch:') {
+      $config->{'hostarch'} = join(' ', @l);
     } elsif ($l0 eq 'additionalarch:') {
-      push @{$config->{'additionalarchs'}}, { arch => $l[0], sysroot => $l[1]};
+      push @{$config->{'additionalarchs'}}, { arch => $l[0], sysroot => ( $l[1] || '' ) };
     } elsif ($l0 !~ /^[#%]/) {
       warn("unknown keyword in config: $l0\n");
     }
