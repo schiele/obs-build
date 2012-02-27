@@ -290,7 +290,7 @@ sub read_config {
     } elsif ($l0 eq 'hostarch:') {
       $config->{'hostarch'} = join(' ', @l);
     } elsif ($l0 eq 'sysroot:') {
-      push @{$config->{'sysroots'}}, { 'label' => $l[0], 'project' => $l[1], 'repository' => $l[2], 'arch' => $l[3], 'path' => $l[4], };
+      push @{$config->{'sysroot'}}, { 'label' => $l[0], 'project' => $l[1], 'repository' => $l[2], 'arch' => $l[3], 'path' => $l[4], };
     } elsif ($l0 eq 'crossbuild:') {
       $config->{'crossbuild'} = $l[0];
     } elsif ($l0 eq 'hostsysroot:') {
@@ -498,7 +498,7 @@ sub get_crossbuild {
 
 sub get_sysroots {
   my ($config) = @_;
-  return @{$config->{'sysroots'}};
+  return @{$config->{'sysroot'}};
 }
 
 sub get_hostsysroot {
