@@ -199,7 +199,7 @@ sub read_config {
   $config->{'repotype'} = [];
   $config->{'patterntype'} = [];
   $config->{'fileprovides'} = {};
-  $config->{'sysroots'} = [];
+  $config->{'sysroot'} = [];
   $config->{'crossbuild'} = 0;
   $config->{'hostsysroot'} = '';
   $config->{'targetsysroot'} = '';
