@@ -207,7 +207,6 @@ sub read_config {
   $config->{'nocbinstall'} = [];
   $config->{'norunscripts'} = [];
   $config->{'norequired'} = [];
-  $config->{'norequired(target)'} = [];
   $config->{'nosupport'} = [];
   $config->{'nokeep'} = [];
   $config->{'noprefer'} = [];
