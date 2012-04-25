@@ -424,9 +424,8 @@ sub get_build {
   @deps = grep {!$ndeps{"-$_"}} @deps;
   # cross dependency have to be dropped before dependency expand.
   @deps = drop_crossdeps(@deps);
-  my $eok;
-  ($eok, @deps) = expand($config, @deps, @ndeps);
-  return ($eok, \@deps);
+  @deps = expand($config, @deps, @ndeps);
+  return @deps;
 }
 
 # Extract cross dependencies
