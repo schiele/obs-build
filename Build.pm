@@ -493,7 +493,7 @@ sub get_deps {
 sub get_crossdeps {
   my ($config, $subpacks, @deps) = @_;
   my ($eok, $deps, $crossdeps) =  prepare_deps(1, $config, $subpacks, @deps);
-  return ($eok, @{$deps}, $crossdeps);
+  return ($eok, $crossdeps, @{$deps});
 }
 
 sub get_preinstalls {
