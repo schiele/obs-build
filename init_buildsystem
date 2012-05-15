@@ -854,7 +854,7 @@ fi
 #
 mkdir -p $BUILD_ROOT/.init_b_cache/alreadyinstalled
 if test -f $BUILD_ROOT/var/lib/rpm/packages.rpm -o -f $BUILD_ROOT/var/lib/rpm/Packages ; then
-    rpm $CALLRPM -qa --qf "%{NAME} $RPMIDFMT" | (
+    $CALLRPM -qa --qf "%{NAME} $RPMIDFMT" | (
 	while read pp ii; do
 	    echo "$ii" > "$BUILD_ROOT/.init_b_cache/alreadyinstalled/$pp"
 	done
