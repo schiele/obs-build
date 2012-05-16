@@ -618,7 +618,6 @@ detect_vm_2nd_stage()
     BUILD_ROOT=/
     BUILD_DIR=/.build
     . $BUILD_DIR/build.data
-    export ABUILD_INIT_WITH_IGNORE_ARCH;
     echo "machine type: `uname -m`"
     if test "$PERSONALITY" != 0 -a -z "$PERSONALITY_SET" ; then
 	export PERSONALITY_SET=true
@@ -1146,8 +1145,6 @@ while test -n "$1"; do
     esac
 done
 
-test -n "$CROSSBUILD" && export ABUILD_INIT_WITH_IGNORE_ARCH=true # required for 00-check-install-rpms
-
 check_for_ppc
 
 if test "$VM_TYPE" = "lxc"; then
@@ -1583,7 +1580,6 @@ for SPECFILE in "${SPECFILES[@]}" ; do
         echo "SYSROOTS='${SYSROOTS}'" >> $BUILD_ROOT/.build/build.data
         echo "SYSROOT_TARGET='${SYSROOT_TARGET}'" >> $BUILD_ROOT/.build/build.data
         echo "ABUILD_TARGET='${ABUILD_TARGET}'" >> $BUILD_ROOT/.build/build.data
-        echo "ABUILD_INIT_WITH_IGNORE_ARCH='${ABUILD_INIT_WITH_IGNORE_ARCH}'" >> $BUILD_ROOT/.build/build.data
 	echo "BUILD_DIST='${BUILD_DIST//"'"/$Q}'" >> $BUILD_ROOT/.build/build.data
 	echo "RELEASE='${RELEASE//"'"/$Q}'" >> $BUILD_ROOT/.build/build.data
 	echo "BUILD_DEBUG='${BUILD_DEBUG//"'"/$Q}'" >> $BUILD_ROOT/.build/build.data
