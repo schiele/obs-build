@@ -1185,9 +1185,9 @@ mkdir -p $BUILD_ROOT/var/adm/packages
 touch $BUILD_ROOT/var/adm/packages
 if test -x $BUILD_ROOT/sbin/SuSEconfig ; then
     if grep norestarts $BUILD_ROOT/sbin/SuSEconfig > /dev/null ; then
-        chroot $BUILD_ROOT /sbin/SuSEconfig --norestarts --force
+       chroot $BUILD_ROOT /sbin/SuSEconfig --norestarts --force
     else
-        chroot $BUILD_ROOT /sbin/SuSEconfig --force
+       chroot $BUILD_ROOT /sbin/SuSEconfig --force
     fi
 fi
 
@@ -1197,7 +1197,7 @@ fi
 
 for PROG in /usr/bin/TeX/texhash /usr/bin/texhash ; do
     test -x $BUILD_ROOT/$PROG && \
-        chroot $BUILD_ROOT bash -c ". /etc/profile ; $PROG"
+       chroot $BUILD_ROOT bash -c ". /etc/profile ; $PROG"
 done
 
 if test -e $BUILD_ROOT/usr/share/zoneinfo/UTC ; then
