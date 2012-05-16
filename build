@@ -1437,7 +1437,7 @@ if [ -z "$RUNNING_IN_VM" ]; then
     test -n "$BUILD_RPMS" && echo Using BUILD_RPMS=$BUILD_RPMS
     echo Using BUILD_ARCH=$BUILD_ARCH
     test -n "$VM_TYPE" && echo "Doing $VM_TYPE build${VM_IMAGE:+ in $VM_IMAGE}"
-    test -n "$CROSSBUILD" && echo "Doing crossbuild on $BUILD_ARCH for $ABUILD_TARGET"
+    test -n "$CROSSBUILD" && echo "Doing crossbuild for $ABUILD_TARGET"
     echo
 fi
 
